@@ -6,6 +6,9 @@ function App() {
   return (
     <div>
       <button className='btn'>Hello</button>
+      <div>
+        <h1>Hello World</h1>
+      </div>
     </div>
   )
 }
