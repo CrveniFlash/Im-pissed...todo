@@ -1,13 +1,13 @@
 import { useState } from 'react'
-
+import AddTodo from './components/TodoList'
 import './App.css'
+import Form from './components/Form'
 
 function App() {
   return (
-    <div>
-      <button className='btn'>Hello</button>
+    <div className='flex justify-center items-center'>
       <div>
-        <h1>Hello World</h1>
+        <AddTodo />
       </div>
     </div>
   )
