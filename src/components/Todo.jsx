@@ -1,14 +1,23 @@
 
 import * as Unicons from '@iconscout/react-unicons';
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-export default function Todo({todoText}) {
+export default function Todo({todoText, completed}) {
+    const [complete, setComplete] = useState(false)
+    
+    const handleComplete = () => {
+        setComplete(!complete)
+    }
+
+    
 
     return (
         <div className='flex'>
-            <div className='flex'>
-                <input type="checkbox" checked="checked" className="checkbox" />
-                <p> {todoText} </p>
+            <div onClick={handleComplete} className={`flex text-lg items-center ${complete ? "line-through text-white/50" : ""}`}>
+                <input type="checkbox" checked={complete} className="checkbox " />
+                <p className='mb-[1px]'> {todoText} </p>
             </div>
             <div>
                 <Unicons.UilTrash  />

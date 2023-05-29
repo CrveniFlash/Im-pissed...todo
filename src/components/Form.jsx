@@ -1,5 +1,6 @@
 import * as Unicons from '@iconscout/react-unicons';
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 export default function Form({ todoData, todos, setTodos, setTodoData }) {
 
@@ -9,19 +10,19 @@ export default function Form({ todoData, todos, setTodos, setTodoData }) {
 
     const handleUserSubmit = (e) => {
         e.preventDefault()
-        setTodos([
-            ...todos, 
+        todoData && setTodos([
+            ...todos,
             {
                 text: todoData,
-                completed: false,
-                id: 5
+                id: uuid()
             }
         ])
+        setTodoData("")
     }
 
     return (
         <form onChange={handleUserInput} className="flex items-center">
-            <input type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
+            <input value={todoData} type="text" placeholder="Type here" className="input input-bordered w-full max-w-xs" />
             <button onClick={handleUserSubmit} className="btn"> <Unicons.UilPlus /> </button>
         </form>
     )
