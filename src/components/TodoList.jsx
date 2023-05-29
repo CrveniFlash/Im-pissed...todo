@@ -6,15 +6,22 @@ export default function AddTodo() {
     const [todoData, setTodoData] = useState("")
     const [todos, setTodos] = useState([])
 
-    console.log(todoData)
+    console.log(todos)
     const handleData = (data) => {
 
     }
 
     return (
         <div>
-            <Form todoData={todoData} setTodoData={setTodoData} userInput={setTodoData}/>
-            <Todo todoText={todoData}/>
+            <Form todoData={todoData} todos={todos} setTodos={setTodos} setTodoData={setTodoData} />
+            <div>
+                {todos.map(e => {
+                    return (
+                        <Todo todoText={e.text}/>
+                    )
+                })}
+            </div>
         </div>
+
     )
 }

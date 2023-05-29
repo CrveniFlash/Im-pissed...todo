@@ -1,16 +1,22 @@
 import * as Unicons from '@iconscout/react-unicons';
 import { useState } from 'react';
 
-
-export default function Form({ userInput, todoData, setTodoData }) {
+export default function Form({ todoData, todos, setTodos, setTodoData }) {
 
     const handleUserInput = (e) => {
-        userInput(e.target.value)
+        setTodoData(e.target.value)
     }
 
     const handleUserSubmit = (e) => {
         e.preventDefault()
-
+        setTodos([
+            ...todos, 
+            {
+                text: todoData,
+                completed: false,
+                id: 5
+            }
+        ])
     }
 
     return (
