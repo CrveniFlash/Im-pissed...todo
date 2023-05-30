@@ -1,5 +1,4 @@
 import * as Unicons from '@iconscout/react-unicons';
-import { useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 export default function Form({ todoData, todos, setTodos, setTodoData }) {
@@ -14,7 +13,8 @@ export default function Form({ todoData, todos, setTodos, setTodoData }) {
             ...todos,
             {
                 text: todoData,
-                id: uuid()
+                id: uuid(),
+                completed: false
             }
         ])
         setTodoData("")

@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
-export default function Todo({todoText, completed}) {
+export default function Todo({ todoText, completed, todos }) {
     const [complete, setComplete] = useState(false)
-    
+
     const handleComplete = () => {
         setComplete(!complete)
     }
 
+    console.log(todos)
 
 
     return (

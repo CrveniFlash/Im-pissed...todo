@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import AddTodo from './components/TodoList'
 import './App.css'
-import Form from './components/Form'
 
 function App() {
   return (
